@@ -1,0 +1,190 @@
+<html>
+
+<head>
+  <title>JS EXAM</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="">
+
+  <div class="side-nav-menu min-vh-100 position-fixed d-flex top-0" style="left: 0px;">
+    <div class="nav-tab  d-flex flex-column justify-content-between min-vh-100 p-4">
+        <div class="links">
+            <ul class="list-unstyled overflow-hidden">
+                <li onclick="showSearchInputs();" class="py-2 position-relative cursor-pointer" style="top: 0px;"><a class="nav-category" href="#">Now playing</a></li>
+                <li onclick="getpopular(); " class="py-2 position-relative cursor-pointer" style="top: 0px;"><a class="nav-category" href="#">Popular</a></li>
+                <li onclick="getRated();" class="py-2 position-relative cursor-pointer" style="top: 0px;"><a class="nav-category" href="#">Top Rated</a></li>
+                <li onclick="getTrending(); " class="py-2 position-relative cursor-pointer" style="top: 0px;"><a class="nav-category" href="#">Trending</a></li>
+                <li onclick="getUpcoming(); " class="py-2 position-relative cursor-pointer" style="top: 0px;"><a class="nav-category" href="#">Upcoming</a></li>
+                <li onclick="showContacts(); " class="py-2 position-relative cursor-pointer" style="top: 0px;"><a class="nav-category" href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="nav-footer text-white">
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="footer">
+                <p class="text-muted">Copyright Â© 2019 All Rights <br>Reserved.</p>
+            </div>
+        </div>
+    </div>
+    <div class="nav-header d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black">
+        <img class="logo" src="image/logoo.png" alt="" srcset="">
+        <i class="fa-solid open-close-icon fa-2x fa-x"></i>
+        <div>
+            <i class="fa-solid fa-globe d-block"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+    </div>
+</div>
+
+  --&gt;
+  <!-- /slider -->
+  <section class="pt-5">
+    <div class="container w-75 myM">
+      <div class="row">
+        <div class="col-md-6"><input onkeyup="searchByWord((this.value)) " id="allMovies" class="form-control mb-5 " placeholder="get movies by word...">
+        </div>
+        <div class="col-md-6"><input onkeyup="search((this.value)) " class="form-control" id="word" placeholder="search...">
+        </div>
+
+      </div>
+    </div>
+    <section class="container text-center  ">
+
+      <div class="row" id="res">
+
+
+      </div>
+
+
+    </section>
+
+    <section class="container text-center my-1 py-2 ">
+
+      <div class="row" id="rowData">
+        
+        
+
+<!--             
+        <div class="col-md-6 col-lg-4 my-3 myM  shadow">
+          <div class="movie shadow rounded position-relative">
+            <div class="post">
+              <img src="https://image.tmdb.org/t/p/w500/xsW7M4b4gawgFKCzcXHL2MSeswj.jpg" class="img-fluid rounded">
+              <div class="layer d-flex align-items-center ">
+                <div class="info p-0">
+
+                  <h2>Luther: The Fallen Sun</h2>
+                  <p>A gruesome serial killer is terrorizing London while brilliant but disgraced detective John Luther
+                    sits behind bars. Haunted by his failure to capture the cyber psychopath who now taunts him, Luther
+                    decides to break out of prison to finish the job by any means necessary.</p>
+                  <p>rate: 6.8</p>
+                  <p>2023-02-24</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+
+
+    </section>
+
+
+  </section>
+
+
+
+
+  <section id="contact" class="container myM w-75 mx-auto my-5 ">
+    <h2 class="text-light my-5">ContacUs...</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control" onkeyup="regEXPInpName()" id="name" placeholder="Enter Your Name">
+          <div class="alert alert-danger  d-none " id="namealert" role="alert">
+            Your Name is not valid
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control " onkeyup="regExInpEmail();" id="email" placeholder="Enter Email">
+          <div class="alert alert-danger d-none" id="emailalert" role="alert">
+            entre valid email
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control  " onkeyup="regExInpPhone()" id="phone" placeholder="Enter phone">
+          <div class="alert alert-danger d-none" id="phonealert" role="alert">
+            entre valid phone
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control" onkeyup="regExInpAge()" id="age" placeholder="Enter Age">
+          <div class="alert alert-danger d-none " id="agealert" role="alert" >
+            entre valid Age
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control "onkeyup="regExInpPass()"  type="password" id="password" placeholder="Enter Password">
+          <div class="alert alert-danger d-none" id="passwordalert" role="alert">
+            entre valid password *Minimum eight characters, at least one letter and one number:*
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control  " onkeyup="regExInpRePass()" type="password" id="rePassword" placeholder="Enter RePassword">
+          <div class="alert alert-danger d-none" id="repasswordalert" role="alert">
+            entre valid Repassword
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <button type="submit" disabled="" id="submitBtn" class="btn btn-outline-danger">Submit</button>
+
+  </section>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <!-- <script src="js/mine.min.js"></script> -->
+  <script src="js/jquery-3.6.3.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
